@@ -61,9 +61,18 @@ const removeTask = (id: string) => {
       {{ totalPending }} tasks remaining. {{ totalDone }} tasks completed.
     </h3>
     <div v-if="tasks.length" class="task-filters">
-      <FilterButton filter="all" @changeFilter="currentFilter = 'all'" />
-      <FilterButton filter="done" @changeFilter="currentFilter = 'done'" />
       <FilterButton
+        :currentFilter
+        filter="all"
+        @changeFilter="currentFilter = 'all'"
+      />
+      <FilterButton
+        :currentFilter
+        filter="done"
+        @changeFilter="currentFilter = 'done'"
+      />
+      <FilterButton
+        :currentFilter
         filter="pending"
         @changeFilter="currentFilter = 'pending'"
       />

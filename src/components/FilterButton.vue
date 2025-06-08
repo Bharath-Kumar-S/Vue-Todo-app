@@ -3,6 +3,7 @@ import type { FilterType } from "../types";
 
 const props = defineProps<{
   filter: FilterType;
+  currentFilter: FilterType;
 }>();
 
 const emits = defineEmits<{
@@ -11,7 +12,11 @@ const emits = defineEmits<{
 </script>
 
 <template>
-  <button class="secondary" @click="emits('changeFilter', props.filter)">
+  <button
+    class="secondary"
+    @click="emits('changeFilter', props.filter)"
+    :class="{ contrast: props.filter === props.currentFilter }"
+  >
     {{ props.filter }}
   </button>
 </template>

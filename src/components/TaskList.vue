@@ -35,13 +35,6 @@ const emits = defineEmits<{
   margin-top: 1rem;
 }
 
-.task-filters {
-  display: flex;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-  justify-content: end;
-}
-
 .done {
   text-decoration: line-through;
 }
